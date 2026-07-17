@@ -145,10 +145,11 @@ nav a:hover {
     .hero-content h1 {
         font-size: 2.2rem;
     }
-    .hero-image img {
-        max-width: 80%;
-        margin-top: 20px;
-    }
+  .hero-image {
+    margin-top: 30px;
+}
+.hero-image img {
+    max-width: 80%;
 }
 
 /* --- Sección Servicios --- */
@@ -231,6 +232,28 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* --- Botón CTA del Hero --- */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--whatsapp-green);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    background-color: #20ba5a;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
 /* --- Footer --- */
 footer {
     background-color: #020617;
@@ -240,7 +263,50 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+/* --- Redes Sociales en el Footer --- */
+.social-links {
+    margin-bottom: 20px;
+}
 
+.social-links p {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-card);
+    border: 1px solid #334155;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+.facebook:hover { background-color: #1877f2; border-color: #1877f2; }
+.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); border-color: transparent; }
+.tiktok:hover { background-color: #000000; border-color: var(--primary-color); }
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
 /* --- Responsivo --- */
 @media (max-width: 768px) {
     header {
