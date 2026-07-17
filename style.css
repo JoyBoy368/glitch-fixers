@@ -71,15 +71,26 @@ nav a:hover {
     color: #fff !important;
 }
 
-/* --- Sección Hero --- */
+/* --- Sección Hero Adaptada para Imagen --- */
 .hero {
-    height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
+    padding: 80px 8%;
     background: radial-gradient(circle at center, #1e1b4b 0%, var(--bg-dark) 70%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left; /* Alineado a la izquierda para dar espacio a la imagen */
 }
 
 .hero-content h1 {
@@ -95,32 +106,50 @@ nav a:hover {
 .hero-content p {
     font-size: 1.2rem;
     color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+    margin-bottom: 30px;
 }
 
-.btn-cta {
-    display: inline-block;
-    background-color: var(--whatsapp-green);
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn-cta i {
-    margin-right: 8px;
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2); /* Sutil brillo azul */
+    animation: flotar 4s ease-in-out infinite; /* Efecto flotante moderno */
 }
 
-.btn-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+/* Animación para que la imagen flote suavemente */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
+/* Ajuste para que en celulares la imagen se ponga abajo del texto */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 5%;
+    }
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-image img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
 /* --- Sección Servicios --- */
 .services {
     padding: 80px 8%;
